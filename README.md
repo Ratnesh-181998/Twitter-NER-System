@@ -82,7 +82,9 @@ A full-stack web application powered by BERT (Bidirectional Encoder Representati
 ---
 
 ## 🎬 Demo
-
+- **Streamlit Profile** - https://share.streamlit.io/user/ratnesh-181998
+- **Project Demo** - https://twitter-ner-system-ab12c.streamlit.app/
+ 
 ### Entity Extraction Example
 
 **Input:**
