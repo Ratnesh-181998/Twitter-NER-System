@@ -506,7 +506,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 📱 Phone: +91-947XXXXX46
 
 ### Project Links
-- 🌐 Live Demo: [Coming Soon]
+- 🌐 Live Demo: [Streamlit](https://twitter-ner-system-ab12c.streamlit.app/)
 - 📖 Documentation: [GitHub Wiki](https://github.com/Ratnesh-181998/twitter-ner-system/wiki)
 - 🐛 Issue Tracker: [GitHub Issues](https://github.com/Ratnesh-181998/twitter-ner-system/issues)
 
