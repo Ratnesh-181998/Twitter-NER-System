@@ -18,20 +18,25 @@ logger = logging.getLogger(__name__)
 def main():
     logger.info("Starting BERT model training...")
     
-    # Initialize model
-    data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+    # Initialize model - Data is now in the current directory (backend)
+    data_dir = os.path.dirname(__file__)
     model = NERModel(model_type='bert', data_dir=data_dir)
     
-    # Train for 1 epoch
-    logger.info("Training for 1 epoch to initialize the model...")
-    model.train(epochs=1, batch_size=32)
-    
-    # Save the model
-    logger.info("Saving model...")
-    model.save_model('bert_ner_model')
-    
-    logger.info("Done! Model saved to bert_ner_model/")
-    logger.info("You can now restart the API and it will load the trained model.")
+    # Train for 3 epochs for better accuracy
+    logger.info("Training for 3 epochs...")
+    try:
+        model.train(epochs=3, batch_size=16)
+        
+        # Save the model with the correct name the API expects
+        save_path = 'bert-base-uncased_ner_model'
+        logger.info(f"Saving model to {save_path}...")
+        model.save_model(save_path)
+        
+        logger.info(f"Done! Model saved to {save_path}/")
+        logger.info("You can now restart the API and it will load the trained model.")
+        
+    except Exception as e:
+        logger.error(f"Training failed: {e}")
 
 if __name__ == "__main__":
     main()
