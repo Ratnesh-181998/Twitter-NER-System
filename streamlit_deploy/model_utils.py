@@ -36,6 +36,8 @@ class NERModel:
         self.schema = None
         self.tag2id = None
         self.id2tag = None
+        self.train_data = None
+        self.test_data = None
         self.max_len = 128
         self.tokenizer = None
         self.device = device
@@ -92,10 +94,10 @@ class NERModel:
 
     def prepare_data(self):
         """Prepare training and test data"""
-        train_samples = self.load_data('wnut 16.txt.conll')
-        test_samples = self.load_data('wnut 16test.txt.conll')
+        self.train_data = self.load_data('wnut 16.txt.conll')
+        self.test_data = self.load_data('wnut 16test.txt.conll')
         
-        all_samples = train_samples + test_samples
+        all_samples = self.train_data + self.test_data
         
         # Get unique tags
         all_tags = set()
@@ -118,7 +120,7 @@ class NERModel:
         logger.info(f"Number of tags: {len(self.schema)}")
         logger.info(f"Tags: {self.schema}")
         
-        return train_samples, test_samples
+        return self.train_data, self.test_data
 
     def tokenize_and_align_labels(self, samples):
         """Tokenize samples and align labels"""
