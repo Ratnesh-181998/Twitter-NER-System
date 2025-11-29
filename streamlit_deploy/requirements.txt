@@ -1,0 +1,10 @@
+streamlit
+pandas
+plotly
+torch
+transformers
+numpy
+st-annotated-text
+requests
+scikit-learn
+seqeval
