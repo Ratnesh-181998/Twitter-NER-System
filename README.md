@@ -492,10 +492,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **RATNESH SINGH**
 
-- 📧 Email: [ratneshsingh181998@gmail.com](mailto:ratneshsingh181998@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/ratnesh-singh](https://www.linkedin.com/in/ratnesh-singh-a01a47193/)
-- 🐙 GitHub: [github.com/Ratnesh-181998](https://github.com/Ratnesh-181998)
-- 📱 Phone: +91-9140191998
+- 📧 Email: [rattudacsit2021gate@gmail.com](mailto:rattudacsit2021gate@gmail.com)
+- 💼 LinkedIn: [https://www.linkedin.com/in/ratneshkumar1998/](https://www.linkedin.com/in/ratneshkumar1998/)
+- 🐙 GitHub: [https://github.com/Ratnesh-181998](https://github.com/Ratnesh-181998)
+- 📱 Phone: +91-947XXXXX46
 
 ### Project Links
 - 🌐 Live Demo: [Coming Soon]
