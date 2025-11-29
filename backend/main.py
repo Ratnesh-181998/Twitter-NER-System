@@ -33,7 +33,7 @@ app.add_middleware(
 )
 
 # Initialize model wrapper
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+DATA_DIR = os.path.dirname(__file__)
 bert_model = NERModel(model_type='bert', data_dir=DATA_DIR)
 
 # Training status
@@ -73,9 +73,10 @@ def ensure_model_ready():
             bert_model.prepare_data()
             
             # Try to load saved BERT model
-            if os.path.exists('bert_ner_model'):
-                logger.info("Loading saved BERT model...")
-                bert_model.load_saved_model('bert_ner_model')
+            model_path = 'bert-base-uncased_ner_model'
+            if os.path.exists(model_path):
+                logger.info(f"Loading saved BERT model from {model_path}...")
+                bert_model.load_saved_model(model_path)
             else:
                 logger.info("No saved BERT model found. Building new model...")
                 bert_model.build_bert_model()
