@@ -78,6 +78,10 @@ def get_model():
         model.prepare_data()
     except Exception as e:
         print(f"Warning: Could not load data: {e}")
+    
+    # Build the model (downloads pre-trained BERT weights)
+    with st.spinner("Downloading BERT model (this happens only once)..."):
+        model.build_bert_model()
         
     return model
 
