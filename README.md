@@ -507,8 +507,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### Project Links
 - 🌐 Live Demo: [Coming Soon]
-- 📖 Documentation: [GitHub Wiki](https://github.com/YOUR_USERNAME/twitter-ner-system/wiki)
-- 🐛 Issue Tracker: [GitHub Issues](https://github.com/YOUR_USERNAME/twitter-ner-system/issues)
+- 📖 Documentation: [GitHub Wiki](https://github.com/Ratnesh-181998/twitter-ner-system/wiki)
+- 🐛 Issue Tracker: [GitHub Issues](https://github.com/Ratnesh-181998/twitter-ner-system/issues)
 
 ---
 
