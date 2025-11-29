@@ -232,12 +232,14 @@ On first run, the system will:
 - **Challenge**: Processing 500M+ tweets/day with noisy data
 - **Solution**: Automated entity extraction for trend analysis
 - **Impact**: Improved content recommendation and ad targeting
+<img width="2082" height="1476" alt="image" src="https://github.com/user-attachments/assets/8169eed8-2918-44c0-9305-23950ba6bf07" />
 
 ### 2. ℹ️ About
 - System features and capabilities
 - Supported entity types (10+ categories)
 - Model architecture overview
 - Dataset information
+<img width="2236" height="1391" alt="image" src="https://github.com/user-attachments/assets/1636ff4e-91a6-4cd9-8f45-46af4240efe3" />
 
 ### 3. 📚 Technical Documentation
 Interactive navigation through:
@@ -249,6 +251,7 @@ Interactive navigation through:
 - Tokenization & Alignment
 - Model Comparison
 - Future Work & Questions
+<img width="2088" height="1382" alt="image" src="https://github.com/user-attachments/assets/2f15d399-d293-4db6-8c0a-f77899372253" />
 
 ### 4. 🔍 Analyze
 - **Text Input**: Enter any text for entity extraction
@@ -258,6 +261,8 @@ Interactive navigation through:
   - Unique entity types
   - Entity distribution chart
   - Detailed entity table with counts
+<img width="2868" height="1258" alt="image" src="https://github.com/user-attachments/assets/13a4f0a2-83e8-4ea2-b267-771000a94883" />
+<img width="2824" height="1353" alt="image" src="https://github.com/user-attachments/assets/d5ea5dd2-d828-4743-9a67-2a4462689ac3" />
 
 ### 5. 🛠️ Model & Training
 - **Model Selection**: Choose from 5 model architectures
@@ -266,17 +271,20 @@ Interactive navigation through:
   - Batch Size (8-64)
   - Real-time training progress
 - **Dataset Info**: Training/validation split details
+<img width="2762" height="1393" alt="image" src="https://github.com/user-attachments/assets/e8c15b58-9ff8-4431-96e3-6e1fb0e3157f" />
 
 ### 6. 📊 Data Statistics
 - Training samples: Count and distribution
 - Test samples: Validation data overview
 - Entity distribution: Visual breakdown
 - Max sequence length: Data characteristics
+<img width="2841" height="1387" alt="image" src="https://github.com/user-attachments/assets/df6886f6-67f6-49c7-b543-79f508c8b8be" />
 
 ### 7. 📝 Logs
 - Real-time API activity monitoring
 - Error tracking and debugging
 - Download logs functionality
+<img width="2862" height="1399" alt="image" src="https://github.com/user-attachments/assets/c899acf7-04f2-439b-852c-6cdbb0422960" />
 
 ---
 
