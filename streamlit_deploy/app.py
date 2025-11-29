@@ -324,7 +324,7 @@ with tabs[3]:
                             })
                             fig = px.pie(df_entities, values='Count', names='Entity Type', hole=0.4, 
                                          color_discrete_sequence=px.colors.qualitative.Pastel)
-                            fig.update_layout(background_color="rgba(0,0,0,0)")
+                            fig.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
                             st.plotly_chart(fig, use_container_width=True)
                         else:
                             st.info("No entities found to visualize.")
