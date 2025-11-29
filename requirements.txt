@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+streamlit
+requests
+pandas
+torch
+transformers
+st-annotated-text
+plotly
+pydantic

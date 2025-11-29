@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Project specific
+ner_api.log
+*_ner_model/
+*.model
+*.bin
+*.safetensors
+saved_model/
+logs/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Mac
+.DS_Store
