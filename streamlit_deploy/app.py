@@ -6,6 +6,7 @@ from annotated_text import annotated_text
 import time
 import os
 from model_utils import NERModel
+from tweetclaw_import import parse_tweetclaw_upload
 
 st.set_page_config(
     page_title="Twitter NER Analyzer",
@@ -257,6 +258,23 @@ with tabs[3]:
     st.header("🔍 Analyze Tweet")
     
     st.markdown("Enter a tweet or sentence below to extract entities.")
+
+    tweetclaw_texts = []
+    uploaded_file = st.file_uploader(
+        "Import TweetClaw export",
+        type=["json", "jsonl", "csv"],
+        help="Upload JSON, JSONL, or CSV exports with tweet text fields."
+    )
+
+    if uploaded_file is not None:
+        try:
+            tweetclaw_texts = parse_tweetclaw_upload(uploaded_file)
+            if tweetclaw_texts:
+                st.success(f"Loaded {len(tweetclaw_texts)} TweetClaw rows.")
+            else:
+                st.warning("No tweet text fields were found in this export.")
+        except Exception as e:
+            st.error(f"Could not import TweetClaw export: {e}")
     
     # Sample selector
     sample_options = {
@@ -270,6 +288,14 @@ with tabs[3]:
     selected_sample = st.selectbox("Or choose a sample:", list(sample_options.keys()))
     
     default_text = sample_options[selected_sample] if selected_sample != "Custom" else ""
+
+    if tweetclaw_texts:
+        row_options = {
+            f"Row {index + 1}: {text[:80]}": text
+            for index, text in enumerate(tweetclaw_texts)
+        }
+        selected_row = st.selectbox("TweetClaw row:", list(row_options.keys()))
+        default_text = row_options[selected_row]
     
     text_input = st.text_area("Text:", value=default_text, height=100, placeholder="Type something here...")
     
