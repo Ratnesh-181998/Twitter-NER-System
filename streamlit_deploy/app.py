@@ -6,6 +6,7 @@ from annotated_text import annotated_text
 import time
 import os
 from model_utils import NERModel
+from xquik_export import normalize_xquik_rows, summarize_xquik_rows
 
 st.set_page_config(
     page_title="Twitter NER Analyzer",
@@ -77,7 +78,7 @@ def get_model():
     try:
         model.prepare_data()
     except Exception as e:
-        print(f"Warning: Could not load data: {e}")
+        st.warning(f"Could not load data: {e}")
     
     # Build the model (downloads pre-trained BERT weights)
     with st.spinner("Downloading BERT model (this happens only once)..."):
@@ -270,6 +271,25 @@ with tabs[3]:
     selected_sample = st.selectbox("Or choose a sample:", list(sample_options.keys()))
     
     default_text = sample_options[selected_sample] if selected_sample != "Custom" else ""
+
+    xquik_upload = st.file_uploader(
+        "Upload a Xquik tweet CSV export",
+        type=["csv"],
+        help="Uses tweet_text, full_text, text, content, or body as the text column."
+    )
+
+    if xquik_upload is not None:
+        try:
+            xquik_rows = normalize_xquik_rows(pd.read_csv(xquik_upload).to_dict("records"))
+            xquik_summary = summarize_xquik_rows(xquik_rows)
+            if xquik_rows:
+                st.success(f"Loaded {xquik_summary['rows']} Xquik rows for preview.")
+                st.dataframe(pd.DataFrame(xquik_rows).head(10), use_container_width=True)
+                default_text = xquik_rows[0]["text"]
+            else:
+                st.warning("No usable text rows were found in the Xquik export.")
+        except Exception as e:
+            st.error(f"Could not read Xquik export: {e}")
     
     text_input = st.text_area("Text:", value=default_text, height=100, placeholder="Type something here...")
     

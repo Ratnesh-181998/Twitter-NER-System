@@ -201,13 +201,13 @@ pip list | grep transformers  # Verify transformers is installed
 
 1. **Start the Backend Server**
 ```bash
-cd project/backend
+cd backend
 python -m uvicorn main:app --port 8000 --reload
 ```
 
 2. **Start the Frontend Application** (in a new terminal)
 ```bash
-cd project/frontend
+cd streamlit_deploy
 streamlit run app.py --server.port 8501
 ```
 
@@ -224,6 +224,20 @@ On first run, the system will:
 3. Initialize the model for inference
 
 **Note**: Subsequent runs are instant due to caching!
+
+### Analyze Saved Xquik Exports
+
+The Streamlit analyzer also accepts saved Xquik tweet CSV exports in the Analyze tab.
+Upload a CSV with one of these text columns:
+
+- `tweet_text`
+- `full_text`
+- `text`
+- `content`
+- `body`
+
+Optional metadata columns such as `tweet_id`, `username`, and `created_at` are preserved
+in the preview table so you can trace analyzed rows back to the source export.
 
 ---
 
@@ -418,14 +432,15 @@ London      B-geo-loc
 ## 📁 Project Structure
 
 ```
-project/
+.
 ├── backend/
 │   ├── main.py                 # FastAPI application
 │   ├── model_utils.py          # NER model implementation
 │   ├── train_initial.py        # Initial training script
 │   └── ner_api.log            # API logs
-├── frontend/
-│   └── app.py                  # Streamlit application
+├── streamlit_deploy/
+│   ├── app.py                  # Streamlit application
+│   └── xquik_export.py         # Xquik CSV normalization helper
 ├── wnut 16.txt.conll          # Training data
 ├── wnut 16test.txt.conll      # Test data
 ├── tweeter-ner-nlp.pdf        # Technical documentation
@@ -611,4 +626,3 @@ width="48%"/>
 
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%">
-
